@@ -9,8 +9,6 @@ DWORD enginedll_size;
 
 int value = 1;
 
-/*Я не уверен, что код андетектед, используйте на свой страх и риск. Автор: ripple. Дискорд: ripple#1337*/
-
 void SetClanTag(const char* tag, const char* name)
 {
 	unsigned char Shellcode[] =
@@ -87,19 +85,19 @@ void main()
 		if (!FileClanTag.is_open())
 			return;
 
-		FileClanTag.getline(cBuf, 64); // считывание задержку до "
+		FileClanTag.getline(cBuf, 64); // Г±Г·ГЁГІГ»ГўГ Г­ГЁГҐ Г§Г Г¤ГҐГ°Г¦ГЄГі Г¤Г® "
 		iDelay = std::atoi(cBuf);
 
-		FileClanTag.getline(cBuf, 64, '"'); // переход до первой ", поставив курсор вперед, где будет клантег
+		FileClanTag.getline(cBuf, 64, '"'); // ГЇГҐГ°ГҐГµГ®Г¤ Г¤Г® ГЇГҐГ°ГўГ®Г© ", ГЇГ®Г±ГІГ ГўГЁГў ГЄГіГ°Г±Г®Г° ГўГЇГҐГ°ГҐГ¤, ГЈГ¤ГҐ ГЎГіГ¤ГҐГІ ГЄГ«Г Г­ГІГҐГЈ
 		while (!FileClanTag.eof())
 		{
-			FileClanTag.getline(cBuf, 64, '"'); // считывание клантега до "
+			FileClanTag.getline(cBuf, 64, '"'); // Г±Г·ГЁГІГ»ГўГ Г­ГЁГҐ ГЄГ«Г Г­ГІГҐГЈГ  Г¤Г® "
 			sClanTagList[i1] = cBuf;
 
 			sClanTagCount++;
 			i1++;
 
-			FileClanTag.getline(cBuf, 64, '"'); // переход на новую строку до ", поставив курсор вперед, где будет клантег
+			FileClanTag.getline(cBuf, 64, '"'); // ГЇГҐГ°ГҐГµГ®Г¤ Г­Г  Г­Г®ГўГіГѕ Г±ГІГ°Г®ГЄГі Г¤Г® ", ГЇГ®Г±ГІГ ГўГЁГў ГЄГіГ°Г±Г®Г° ГўГЇГҐГ°ГҐГ¤, ГЈГ¤ГҐ ГЎГіГ¤ГҐГІ ГЄГ«Г Г­ГІГҐГЈ
 		}
 	}
 
